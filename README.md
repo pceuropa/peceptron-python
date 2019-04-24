@@ -2,8 +2,10 @@
 
 Presentation about single layer perceptron, weights, activation functions, learning algorithms.
 How use PlayGround TensorFlow to imporove skills of comprehensions topis machine learning.
-[Presentation Perceptron](https://pceuropa.net/perceptron/index.html
+
+[Presentation Perceptron](https://pceuropa.net/perceptron/index.html)
 Sponsor : [Software House Wroclaw](https://altimi.com/?language=en)
+
 Visualistaion of all stages learn of model by Matplotlib and mlxtend.plotting.
 
 
