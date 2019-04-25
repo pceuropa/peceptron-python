@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/highlight/styles/github.css">
     <link href="css/classic-slides.css" rel="stylesheet" />
 </head>
+
 <body class="impress-not-supported">
 
 <div class="fallback-message">
@@ -17,21 +18,15 @@
 <div id="impress" data-transition-duration="1000" data-autoplay="0">
 
     <div id='intro' class="step" data-x="-1000" data-y="-1500">
-      O Machine learning
-      <br />
-      <br />
-           <small>w rolach głównych:</small>
-        <h1>
-          PERCEPTRON</h1>
+        <p>O Machine learning</p>
+        <small>w rolach głównych:</small>
+        <h1>PERCEPTRON</h1>
         Przedstawia: Rafał Margużewicz</br>
-        Sponsor:  <a href="https://altimi.com/">
-          <img class='logo' src="images/logo_altimi.png" alt="description" title="sponsor prezentacji" />
-        </a>
+        Sponsor:  <a href="https://altimi.com/"><img class='logo' src="images/logo_altimi.png" alt="description" title="sponsor prezentacji" /></a>
     </div>
  
-    <div id='table_content' class="step slide" data-x="0" data-y="-1500">
-      <br/>
-      <h1> Spis treści </h1>
+    <div id='table_content' class="step slide more-padding" data-x="0" data-y="-1500">
+        <h1> Spis treści </h1>
         <ul>
             <li><a href="#algorithms_learning">Algorytmy uczące</a></li>
             <li><a href="#perceptron-biology">Perceptron - Biologia</a></li>
@@ -39,17 +34,17 @@
             <li><a href="#percetron-diagram">Perceptron - diagram sieci</a></li>
             <li><a href="#percetron-python">Perceptron - python</a></li>
             <li><a href="#perceptron-playgraundtensorflow">Perceptron w PlayGroundTensorFlow</a></li>
+            <li><a href="#questions">QA</a></li>
         </ul>
-        <div class="notes"> </div>
     </div>
 
-    <div id='algorithms_learning' class="step slide" data-x="0" data-y="-700">
+    <div id='algorithms_learning' class="step slide more-padding" data-x="0" data-y="-700">
         <h1>Algorytmy uczące</h1>
             <ol>
-              <li><a href="#regresion">Regresia logistyczna</a> regresia</li>
-              <li><a href="#tree">Drzewo decyzyjne</a> klasyfikacja</li>
-              <li><a href="#knn">kNN (k-Nearest Neighbour)</a> klastracja</li>
-              <li><a href="#step-1d">Perceptron</a></li>
+              <li><a href="https://en.wikipedia.org/wiki/Linear_regression">Regresia logistyczna</a> (kat. regresia)</li>
+              <li><a href="https://en.wikipedia.org/wiki/Decision_tree_learning">Drzewo decyzyjne</a> (kat. klasyfikacja)</li>
+              <li><a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">kNN (k-Nearest Neighbour)</a> (kat. klastracja)</li>
+              <li><a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron</a></li>
             </ol>
     </div>
 
@@ -68,55 +63,59 @@
     </div>
 
     <div id='percetron' class="step" data-x="1000" data-y="100">
-      The perceptron is <b>an algorithm</b><br/><br />
-      for <b>supervised learning</b> of <br/><b>binary classifiers</b>.
+        The perceptron is <b>an algorithm</b><br/><br />
+        for <b>supervised learning</b> of <br/><b>binary classifiers</b>.
     </div>
 
 
     <div id='perceptron_biology' class="step slide" data-x="2000" data-y="100">
-      <h1>Perceptron - Biologia</h1>
-            <img src="images/percetron_biology.png" />
+        <h1>Perceptron - Biologia</h1>
+        <img src="images/percetron_biology.png" />
     </div>
 
     <div id='perceptron_math' class="step slide" data-x="2900" data-y="100">
-      <h1>Perceptron - model matematyczny</h1>
+        <h1>Perceptron - model matematyczny</h1>
+        <img height='100' src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c27b30e07934b4fc8f346ec6fafd5b077d0d4efc"  />
+        <b>x</b> - input</br>
+        <b>w</b> - wektor reprezentujący wagi</br>
+        w * x jest iloczynem skalarnym (eng. dot product) i można go zapisać w formie <img height='200' src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bf43c01ee8403ea39c2f6d2829576c1769a100d7" alt="" />
 
-    <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c27b30e07934b4fc8f346ec6fafd5b077d0d4efc"  />
     </div>
 
 
     <div id='perceptron_diagram' class="step slide" data-x="3800" data-y="100">
-      <h1>Perceptron - diagram</h1>
-            <img src="images/perceptron_schematic.png" alt="percetron math" title="perceptron math"/>
+        <h1>Perceptron - diagram</h1>
+        <img src="images/perceptron-diagram.png" alt="percetron math" title="perceptron math"/>
     </div>
 
     <div id='perceptron_python' class="step slide code" data-x="4700" data-y="100">
-             <pre><code class='python'>
-    class Perceptron(object):
+        <pre><code class='python'>
+class Perceptron(object):
 
-        def __init__(self, eta=0.01, epochs=50):
-            self.eta = eta  # learning reate
-            self.epochs = epochs
+    def __init__(self, eta = 0.01, epochs = 50):
+        self.eta = eta  # learning reate
+        self.epochs = epochs
 
-        def train(self, X, y):  # Perceptron Rule
-            self.w_ = np.zeros(1 + X.shape[1])
-            self.errors_ = []
+    def train(self, X, target):  # Perceptron Rule
+        self.w = np.zeros(1 + X.shape[1])
+        self.err = []
 
-            for _ in range(self.epochs):
-                errors = 0
-                for Xi, target in zip(X, y):
-                    update = self.eta * (target - self.predict(Xi))
-                    self.w_[1:] += update * Xi
-                    self.w_[0] += update
-                    errors += int(update != 0.0)
-                self.errors_.append(errors)
-            return self
+        print('Training progress..')
+        for epoch in range(self.epochs):
+            errors = 0
+            for x, y in zip(X, target):
+                update = self.eta * (y - self.predict(x))
+                self.w[1:] += update * x
+                self.w[0] += update
+                errors += int(update != 0.0)
 
-        def net_input(self, X):
-            return np.dot(X, self.w_[1:]) + self.w_[0]
+        return self
 
-        def predict(self, X):
-            return np.where(self.net_input(X) >= 0.0, 1, 0)
+    def dot_product(self, X):
+        return np.dot(X, self.w[1:]) + self.w[0]
+
+    def predict(self, X):
+        return np.where(self.dot_product(X) >= 0.0, 1, 0)
         </code></pre>
     </div>
 
@@ -126,7 +125,7 @@
 
 
     <div id="question" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <h1>Questions? </h1>
+        <h1>Pytania? </h1>
     </div>
 
     <div id="qestion_1" class="step" data-x="6000" data-y="3000"  data-rotate="30" data-scale="4">
@@ -149,7 +148,12 @@
     <div id="moreinfo" class="step slide" data-x="3000" data-y="1700">
         More info:
         <ul>
-        <li><a href="http://sebastianraschka.com/Articles/2015_singlelayer_neurons.html">Single layer Perceptron</a> - good source</li>
+        
+        <li><a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron na Wiki</a></li>
+        <li><a href="http://sebastianraschka.com/Articles/2015_singlelayer_neurons.html">Perceptron by Sebastian Raschka</a></li>
+        <li><a href="https://www.youtube.com/watch?v=ntKn5TPHHAk">Perceptron na Youtube Eng</a></li>
+        <li><a href="https://www.youtube.com/watch?v=sWPlLQgwxG8 ">Sieci neuronowe na Youtube PL</a></li>
+        <li><a href="https://github.com/pceuropa/peceptron-python">Source Code</a></li>
         <li><a href="https://www.hdfgroup.org/solutions/hdf5">HDF5</a></li>
         </ul>
     </div>
@@ -158,17 +162,11 @@
     </div>
 </div>
 
-<!--
-    Add navigation-ui controls: back, forward and a select list.
-    Add a progress indicator bar (current step / all steps)
-    Add the help popup plugin
--->
 <div id="impress-toolbar"></div>
 <div class="impress-progressbar"><div></div></div>
 <div class="impress-progress"></div>
 <script type="text/javascript" src="js/highlight.pack.js"></script>
 <script type="text/javascript" src="js/impress.js"></script>
 <script>impress().init();</script>
-
 </body>
 </html>

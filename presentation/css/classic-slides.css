@@ -439,6 +439,8 @@ body.impress-mouse-timeout {
     left: 750px;
 }
 
+.more-padding {padding:120px;}
+
 /*
     And as the last thing there is a workaround for quite strange bug.
     It happens a lot in Chrome. I don't remember if I've seen it in Firefox.

@@ -19,10 +19,10 @@ class Perceptron(object):
         self.epochs = epochs
 
     def train(self, X: np.ndarray, target: np.ndarray):  # Perceptron Rule
-        print('Training progress..')
         self.w = np.zeros(1 + X.shape[1])
         self.err = []
 
+        print('Training progress..')
         for epoch in range(self.epochs):
             errors = 0
             for x, y in zip(X, target):
@@ -36,8 +36,8 @@ class Perceptron(object):
             plot(X, target, self, epoch, accuracy, self.w)
         return self
 
-    def net_input(self, X: np.ndarray) -> np.float64:
+    def dot_product(self, X: np.ndarray) -> np.float64:
         return np.dot(X, self.w[1:]) + self.w[0]
 
     def predict(self, X: np.ndarray) -> int:
-        return np.where(self.net_input(X) >= 0.0, 1, 0)
+        return np.where(self.dot_product(X) >= 0.0, 1, 0)
