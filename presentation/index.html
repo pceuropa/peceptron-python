@@ -18,7 +18,7 @@
 <div id="impress" data-transition-duration="1000" data-autoplay="0">
 
     <div id='intro' class="step" data-x="-1000" data-y="-1500">
-        <p>O Machine learning</p>
+        <p>Wstęp do sieci neuronowych</p>
         <small>w rolach głównych:</small>
         <h1>PERCEPTRON</h1>
         Przedstawia: Rafał Margużewicz</br>
@@ -28,7 +28,7 @@
     <div id='table_content' class="step slide more-padding" data-x="0" data-y="-1500">
         <h1> Spis treści </h1>
         <ul>
-            <li><a href="#algorithms_learning">Algorytmy uczące</a></li>
+            <li><a href="#algorithms_learning">Algorytmy uczenia maszynowego</a></li>
             <li><a href="#perceptron-biology">Perceptron - Biologia</a></li>
             <li><a href="#perceptron-math">Perceptron - model matematyczny</a></li>
             <li><a href="#percetron-diagram">Perceptron - diagram sieci</a></li>
@@ -38,111 +38,116 @@
         </ul>
     </div>
 
-    <div id='algorithms_learning' class="step slide more-padding" data-x="0" data-y="-700">
-        <h1>Algorytmy uczące</h1>
-            <ol>
-              <li><a href="https://en.wikipedia.org/wiki/Linear_regression">Regresia logistyczna</a> (kat. regresia)</li>
-              <li><a href="https://en.wikipedia.org/wiki/Decision_tree_learning">Drzewo decyzyjne</a> (kat. klasyfikacja)</li>
-              <li><a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">kNN (k-Nearest Neighbour)</a> (kat. klastracja)</li>
-              <li><a href="https://en.wikipedia.org/wiki/Perceptron">Perceptron</a></li>
-            </ol>
-    </div>
+<div id='algorithms_learning' class="step slide" data-x="1000" data-y="-1500">
+<h1>Algorytmy uczenia maszynowego</h1>
+Uczenie nadzorowane (eng. Supervised Learning)
+  <ol class='small'>
+    <li><a href="https://en.wikipedia.org/wiki/Linear_regression">Regresia liniowa</a>(kat. regresia)</li>
+    <li><a href="https://en.wikipedia.org/wiki/Decision_tree_learning">Drzewo decyzyjne</a>(kat. klasyfikacja)</li>
+    <li><a href="https://qph.fs.quoracdn.net/main-qimg-e0060865872cba85cf59df35c61de626-c">SVM</a>(kat. klasyfikacja)</li>
+    <li><a href="https://en.wikipedia.org/wiki/Artificial_neural_network">Sieci neuronowe</a></li>
+  </ol>
+Uczenie nienadzorowane (eng. Unsupervised Learning)
+  <ol class='small'>
+      <li>
+        <a href="https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm">kNN (k-Nearest Neighbour)</a>(kat.
+        klasyfikacja)</li>
+  </ol>
 
-    <div id='tree_decision' class="step slide" data-x="2000" data-y="-700">
-        Decision Tree
-        <img src="images/decision_tree.png" alt="Decision Tree" />
-    </div>
+Uczenie ze wzmocnieniem (eng. Reinforcement Learning)
+    <ol class='small'>
+      <li><a href="">Q-Learning</a></li>
+      <li><a href=""></a>Temporal Difference (TD)</li>
+      <li><a href=""></a>Deep Adversarial Networks</li>
+    </ol>
+</div>
 
+  <div id='neural_network2' class="step slide" data-x="900" data-y="-700">
+      <img src="images/neutral_network2.png" />
+  </div>
 
-    <div id='neural_network' class="step slide" data-x="3000" data-y="-700">
-        <img src="images/neutral_network.png" />
-    </div>
+  <div id='percetron' class="step" data-x="1000" data-y="100">
+      The perceptron is <b>an algorithm</b><br/><br />
+      for <b>supervised learning</b> of <br/><b>binary classifiers</b>.
+  </div>
 
-    <div id='neural_network2' class="step slide" data-x="3000" data-y="-700">
-        <img src="images/neutral_network2.png" />
-    </div>
+  <div id='perceptron_biology' class="step slide" data-x="2100" data-y="100">
+      <h1>Perceptron - Biologia</h1>
+      <img src="images/percetron_biology.png" />
+  </div>
 
-    <div id='percetron' class="step" data-x="1000" data-y="100">
-        The perceptron is <b>an algorithm</b><br/><br />
-        for <b>supervised learning</b> of <br/><b>binary classifiers</b>.
-    </div>
+  <div id='perceptron_math' class="step slide" data-x="3100" data-y="100">
+      <h1>Perceptron - model matematyczny</h1>
+      </br>
+      <img height='90' src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c27b30e07934b4fc8f346ec6fafd5b077d0d4efc"  />
+      </br>
+      </br>
+      <b>x</b> - wektor danych wejściowych (input)</br>
+      <b>w</b> - wektor reprezentujący wagi</br>
+      <b>b</b> - bias</br></br>
+      w * x jest iloczynem skalarnym (eng. dot product) i można go zapisać w formie <img height='150' src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bf43c01ee8403ea39c2f6d2829576c1769a100d7" alt="" />
+  </div>
 
+  <div id='perceptron_diagram' class="step slide" data-x="4100" data-y="100">
+      <h1>Perceptron - diagram</h1>
+      <img src="images/perceptron-diagram.png" alt="percetron math" title="perceptron math"/>
+  </div>
 
-    <div id='perceptron_biology' class="step slide" data-x="2000" data-y="100">
-        <h1>Perceptron - Biologia</h1>
-        <img src="images/percetron_biology.png" />
-    </div>
-
-    <div id='perceptron_math' class="step slide" data-x="2900" data-y="100">
-        <h1>Perceptron - model matematyczny</h1>
-        <img height='100' src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c27b30e07934b4fc8f346ec6fafd5b077d0d4efc"  />
-        <b>x</b> - input</br>
-        <b>w</b> - wektor reprezentujący wagi</br>
-        w * x jest iloczynem skalarnym (eng. dot product) i można go zapisać w formie <img height='200' src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bf43c01ee8403ea39c2f6d2829576c1769a100d7" alt="" />
-
-    </div>
-
-
-    <div id='perceptron_diagram' class="step slide" data-x="3800" data-y="100">
-        <h1>Perceptron - diagram</h1>
-        <img src="images/perceptron-diagram.png" alt="percetron math" title="perceptron math"/>
-    </div>
-
-    <div id='perceptron_python' class="step slide code" data-x="4700" data-y="100">
-        <pre><code class='python'>
+  <div id='perceptron_python' class="step slide code" data-x="5100" data-y="100">
+      <pre><code class='python'>
 class Perceptron(object):
 
-    def __init__(self, eta = 0.01, epochs = 50):
-        self.eta = eta  # learning reate
-        self.epochs = epochs
+  def __init__(self, eta = 0.01, epochs = 50):
+      self.eta = eta  # learning reate
+      self.epochs = epochs
 
-    def train(self, X, target):  # Perceptron Rule
-        self.w = np.zeros(1 + X.shape[1])
-        self.err = []
+  def train(self, X, target):  # Perceptron Rule
+      self.w = np.zeros(1 + X.shape[1])
+      self.err = []
 
-        print('Training progress..')
-        for epoch in range(self.epochs):
-            errors = 0
-            for x, y in zip(X, target):
-                update = self.eta * (y - self.predict(x))
-                self.w[1:] += update * x
-                self.w[0] += update
-                errors += int(update != 0.0)
+      print('Training progress..')
+      for epoch in range(self.epochs):
+          errors = 0
+          for x, y in zip(X, target):
+              update = self.eta * (y - self.predict(x))
+              self.w[1:] += update * x
+              self.w[0] += update
+              errors += int(update != 0.0)
 
-        return self
+      return self
 
-    def dot_product(self, X):
-        return np.dot(X, self.w[1:]) + self.w[0]
+  def dot_product(self, X):
+      return np.dot(X, self.w[1:]) + self.w[0]
 
-    def predict(self, X):
-        return np.where(self.dot_product(X) >= 0.0, 1, 0)
-        </code></pre>
-    </div>
+  def predict(self, X):
+      return np.where(self.dot_product(X) >= 0.0, 1, 0)
+      </code></pre>
+  </div>
 
-    <div id='perceptron_playground_tensorflow' class="step" data-x="3000" data-y="900">
-            <a target='new' href="https://playground.tensorflow.org/">Playground.Tensorflow.org</a><br/>
-    </div>
+  <div id='perceptron_playground_tensorflow' class="step" data-x="6000" data-y="100">
+          <a target='new' href="https://playground.tensorflow.org/">Playground.Tensorflow.org</a><br/>
+  </div>
 
 
-    <div id="question" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
-        <h1>Pytania? </h1>
-    </div>
+  <div id="question" class="step" data-x="6300" data-y="2000" data-rotate="20" data-scale="4">
+      <h1>Pytania? </h1>
+  </div>
 
-    <div id="qestion_1" class="step" data-x="6000" data-y="3000"  data-rotate="30" data-scale="4">
-        <p>Gdzie jest wiedza tego modelu ?</p>
-    </div>
+  <div id="qestion_1" class="step" data-x="6000" data-y="3000"  data-rotate="30" data-scale="4">
+      <p>Gdzie jest wiedza tego modelu ?</p>
+  </div>
 
-    <div id="question_2" class="step" data-x="6000" data-y="4000" data-rotate="40" data-scale="2">
-        <p>Jak zapisać wiedzę tego modelu ?</p>
-    </div>
+  <div id="question_2" class="step" data-x="6000" data-y="4000" data-rotate="40" data-scale="2">
+      <p>Jak zapisać wiedzę tego modelu ?</p>
+  </div>
 
-    <div id="question_3" class="step" data-x="6000" data-y="4700" data-rotate="50" data-scale="2">
-        <p>Jak można zapisać ten model ?</p>
-    </div>
+  <div id="question_3" class="step" data-x="6000" data-y="4700" data-rotate="50" data-scale="2">
+      <p>Jak można zapisać ten model ?</p>
+  </div>
 
-    <div id="question_4" class="step" data-x="6000" data-y="5500" data-rotate="60" data-scale="2">
-        <p>Czy perceptron nadaje się do danych nie seperowalnych liniowo [eng. linearly separable]?</p>
-    </div>
+  <div id="question_4" class="step" data-x="6000" data-y="5500" data-rotate="60" data-scale="2">
+      <p>Czy perceptron nadaje się do danych nie seperowalnych liniowo [eng. linearly separable]?</p>
+  </div>
 
 
     <div id="moreinfo" class="step slide" data-x="3000" data-y="1700">

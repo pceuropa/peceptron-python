@@ -440,6 +440,7 @@ body.impress-mouse-timeout {
 }
 
 .more-padding {padding:120px;}
+.small {font-size: 80%}
 
 /*
     And as the last thing there is a workaround for quite strange bug.
